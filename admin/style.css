@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+
+}
+.cen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.panel{
+    background: #444;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+ }
+
+ .panel span{
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+ }
+nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 15rem);
+      padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.content{
+    height: calc(100vh - 6rem);
+    margin-top: 6rem;
+    width: calc(100vw - 15rem);
+     padding: 2rem;
+
+    margin-left: 15rem;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats .card{
+    margin-top: 2rem;
+
+    height: 15rem;
+    width: 20rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px 1px rgba(128, 128, 128, 0.5);
+}
+
+.content h4{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.content p{
+    font-weight: 300;
+}
+
+.orders{
+    margin-top: 5rem;
+}
+
+.ot{
+ }
+
+.ot .line{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
+    padding: 3rem 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.064);
+}
+.header{
+
+font-weight: 800;}

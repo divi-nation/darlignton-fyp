@@ -29,8 +29,7 @@ nav{
     position: absolute;
     z-index: 5;
     background: rgba(255, 255, 255, 0.89);
-    opacity: 0;
-}
+ }
 
 nav.active{
     margin-top: 1rem;
