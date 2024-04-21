@@ -15,8 +15,13 @@
 .main_image{
     height: 70%;
     width: 90%;
-    border: 1px solid;
+    border-radius: 1rem;
+    box-shadow:  0 0 10px 1px rgba(128, 128, 128, 0.151);
 
+ 
+}
+.main_image img{
+    width: 90%;
 }
 
 .subs{
@@ -24,8 +29,7 @@
     bottom: 5rem;
     width: 60%;
     height: 5rem;
-    border: 1px solid;
-    display: flex;
+     display: flex;
     justify-content: space-around;
 
 }
@@ -33,8 +37,14 @@
 .sub_image{
     height: 5rem;
     width: 5rem;
-    border: 1px solid;
-    border-radius: .3rem;
+     border-radius: .3rem;
+    overflow: hidden;
+    box-shadow:  0 0 10px 1px rgba(128, 128, 128, 0.39);
+    
+}
+
+.sub_image img{
+    width: 100%;
 }
 
 .p_info{

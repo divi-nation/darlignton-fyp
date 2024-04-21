@@ -1,0 +1,52 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    border: 3px solid;
+    align-items: flex-start;
+ }
+.bg{
+    background: url(images/bg.avif), rgba(51, 48, 48, 0.137);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    
+}
+ form{
+     margin-top: 3rem;
+     background: white;padding: 2rem;
+ }
+
+ .form-group{
+     display: flex;
+     flex-direction: column;
+      padding: 1rem;
+     background: rgba(128, 128, 128, 0.082);
+     margin-top: 2rem;
+     width: 25rem;
+     border-radius: 1rem;
+ }
+
+ .form-group label{
+     font-weight: 200;
+ }
+
+ .form-group input, select{
+     height: 3rem;
+     width: 100%;
+     border: 1px solid grey;
+     padding-left: 1rem;
+     margin-top: 1rem;
+     border-radius: .7rem;
+     background: white;
+
+ }
+
+ .su{
+     width: 25rem;
+     height: 3.5rem;
+     margin-top: 2rem;
+     margin-bottom: 3rem;
+     background: #222;
+     color: white;
+     border: none;
+ }

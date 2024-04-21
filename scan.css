@@ -1,0 +1,41 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-start !important;
+ }
+
+.contents{
+    align-items: flex-start;
+     position: relative;
+
+}
+.extras{
+    position: absolute;
+    top: .5rem;
+    width: 100%;
+     height: 3rem;
+    justify-content: space-around !important;
+ }
+
+ .preview{
+  }
+
+ .preview img{
+     position: absolute;
+     width: 10rem;
+ }
+.icon{
+    height: 3rem;
+    width: 3rem;
+     border-radius: 50%;
+    background: #969898e1;
+ }
+.extras i{
+    font-size: 1rem;
+    color: white;
+}
+@media (max-width: 500px){
+    .extras{
+        width: 100vw;
+      }
+}
