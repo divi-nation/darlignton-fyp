@@ -100,7 +100,7 @@
                     </div>
 
                 </div>
-<div class="cartitem">
+                <div class="cartitem">
                     <div class="c_image cen">
                         <img src="mb.jpg" alt="">
 
@@ -256,8 +256,9 @@
             </div>
 
             <div class="search n cen">
-                <input type="text" placeholder="Search for products or vendors">
+                <input type="text" id="searchInput" placeholder="Search for products or vendors">
                 <i class="bi bi-search"></i>
+                <div class="results" id="searchResults"></div>
             </div>
 
             <div class="cart n cen">
@@ -401,25 +402,35 @@
     </div>
 
     <script>
+        $(document).ready(function() {
+            $('#searchInput').on('input', function() {
+                var query = $(this).val();
+                if (query.trim() !== '') {
+                    $.ajax({
+                        url: 'backend/search_products.php',
+                        type: 'POST',
+                        data: { query: query },
+                        success: function(response) {
+                            $('#searchResults').html(response);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error: ' + error);
+                        }
+                    });
+                } else {
+                    // Clear search results if input is empty
+                    $('#searchResults').empty();
+                }
+            });
+        });
 
-function addToCart(productId) {
-    // AJAX request to add product to cart
-    $.ajax({
-        type: "POST",
-        url: "backend/add_cart.php", // Path to your cart.php file
-        data: { productId: productId }, // Include the product ID in the data sent to cart.php
-        success: function(response) {
-            console.log(response); // Log the response from cart.php
-        }
-    });
-}
+    </script>
 
+    <script src="scripts/script.js">
 
-    function viewProduct(productId) {
-        // Redirect to product.php with the product ID in the URL
-        window.location.href = 'product.php?product_id=' + btoa(productId);
-    }
-</script>
+       
+        
+    </script>
     
 </body>
 </html>
