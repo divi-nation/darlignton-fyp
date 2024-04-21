@@ -95,3 +95,62 @@ nav{
 .header{
 
 font-weight: 800;}
+
+.add{
+    float: right;
+    background: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+form{
+    width: 100%;
+     margin-top: 2rem;
+}
+
+.inputItem{
+    margin-top: 2rem;
+    width: 30rem;
+     height: 4rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow:  0 0 5px 1px rgba(128, 128, 128, 0.349);
+
+}
+.inputItem input, select{
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.desc{
+    height: max-content;
+}
+
+.desc textarea{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+}
+
+.file{
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form button{
+    padding: 1.5rem 7rem;
+    background: #222;
+    color: white;
+    border: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
