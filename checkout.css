@@ -1,0 +1,92 @@
+.container{
+     width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.info{
+     padding: 5%;
+    padding-top: 15%;
+}
+
+
+.info h4{
+    font-size: 2rem;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+     align-items: flex-start;
+    height: 4rem;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: 5%;
+    
+}
+
+.input input{
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    padding-left: .5rem;
+    border: 1px solid rgba(128, 128, 128, 0.432);
+}
+
+.input label{
+    font-size: .9rem;
+    color: grey;
+    
+}
+
+button{
+    width: 90%;
+    margin-left: 5%;
+    padding: .9rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 1.3rem;
+    background: #222;
+    color: white;
+}
+
+.cont{
+      
+ }
+
+ .oy{
+    height: 85%;
+     width: 50vw;
+    float: bottom;
+    position: absolute;
+    bottom: 0;
+    overflow-y: auto;
+ }
+ .cartitem{
+    margin-left: 5% !important;
+ }
+
+ .os{
+    top: 10px !important;
+    position: fixed;
+    display: none;
+ }
+ .total{
+    height: 15%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 5%;
+  }
+
+ .total h4{
+    font-size: 1.5rem;
+    font-weight: 200;
+
+ }
+
+
+ .total span{
+    font-size: 2.3rem;
+    font-weight: 300;
+
+ }
