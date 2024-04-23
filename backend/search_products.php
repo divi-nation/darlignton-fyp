@@ -1,4 +1,5 @@
 <?php
+
 // Include database connection
 require_once "conn.php";
 
@@ -7,7 +8,7 @@ if(isset($_POST['query'])) {
     $searchQuery = $_POST['query'];
 
     // Query to search for products based on the search query
-    $sql = "SELECT product_name, product_price FROM products WHERE product_name LIKE '%$searchQuery%'";
+    $sql = "SELECT product_id, product_name, product_price FROM products WHERE product_name LIKE '%$searchQuery%'";
 
     // Execute the query
     $result = $conn->query($sql);
@@ -16,10 +17,10 @@ if(isset($_POST['query'])) {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Display product name and price
-            echo '<span class="cen">';
+            // Display product name and price with onclick event
+            echo '<span class="cen" onclick="viewProduct(' . $row["product_id"] . ')">';
             echo '<h4>' . $row["product_name"] . '</h4>';
-            echo '<h6>' . $row["product_price"] . '</h6>';
+            echo '<h6>' . "Ghc " . $row["product_price"] . '</h6>';
             echo '</span>';
         }
     } else {
@@ -29,4 +30,3 @@ if(isset($_POST['query'])) {
     // Close connection
     $conn->close();
 }
-?>

@@ -11,8 +11,8 @@
     border-radius: 2rem;
     z-index: 5;
     padding: 5vw;
-    display: none;
-  
+    
+    
 }
 
 .mycart h4{
@@ -53,7 +53,9 @@
 
 .cartitem p{
     font-size: 12px;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+     max-height: 50%;
+    overflow-y: auto;
 }
 .cartitem .price{
      height: 5rem;

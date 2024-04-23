@@ -15,7 +15,21 @@
 </head>
 <body>
 
-    <div class="mycart">
+
+<div class="mycart">
+    <h4>SHOPPING CART</h4>
+    <div class="cont" >
+        <div class="oy" id="cartItemsContainer">
+                    <!-- Cart items will be dynamically inserted here -->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+         <!-- <div class="mycart">
         <h4>SHOPPING CART</h4>
         <div class="cont">
             <span class="oy">
@@ -230,7 +244,7 @@
             </span>
         </div>
 
-    </div>
+    </div>  -->
 
     <div class="container">
         <nav class="">
@@ -348,45 +362,45 @@
 
 
             <div class="featured">
-    <?php
-    // Query to fetch products from the database
-    $sql = "SELECT * FROM products ORDER BY RAND()";
-    $result = $conn->query($sql);
+                <?php
+                // Query to fetch products from the database
+                $sql = "SELECT * FROM products ORDER BY RAND()";
+                $result = $conn->query($sql);
 
-    // Check if there are any results
-    if ($result->num_rows > 0) {
-        // Output data of each row
-        while ($row = $result->fetch_assoc()) {
-            // Output HTML for displaying each product with onclick event
-            echo '<div class="card">';
-            echo '<div class="img cen" onclick="viewProduct(' . $row["product_id"] . ')">';
-            echo '<img src="./products' . $row["image1"] . '" alt="' . $row["product_name"] . '">';
-            echo '</div>';
-            echo '<span>';
-            echo '<h4 onclick="viewProduct(' . $row["product_id"] . ')">' . $row["product_name"] . '</h4>';
-            echo '<div class="stars">';
-            echo '<i class="bi bi-star-fill"></i>';
-            echo '<i class="bi bi-star-fill"></i>';
-            echo '<i class="bi bi-star-fill"></i>';
-            echo '<i class="bi bi-star-fill"></i>';
-            echo '<i class="bi bi-star-fill"></i>';
-            echo '<aside>(24)</aside>';
-            echo '</div>';
-            echo '<div class="price">$' . $row["product_price"] . '</div>';
-            echo '<div class="bag cen" onclick="addToCart(' . $row["product_id"] . ')">';
-            echo '<div class="i cen" ><i class="bi bi-bag-plus"></i></div>';
-            echo '<h6>Add to cart</h6>';
-            echo '</div>';
-            echo '</span>';
-            echo '</div>';
-        }
-    } else {
-        echo "0 results";
-    }
+                // Check if there are any results
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        // Output HTML for displaying each product with onclick event
+                        echo '<div class="card">';
+                        echo '<div class="img cen" onclick="viewProduct(' . $row["product_id"] . ')">';
+                        echo '<img src="./products' . $row["image1"] . '" alt="' . $row["product_name"] . '">';
+                        echo '</div>';
+                        echo '<span>';
+                        echo '<h4 onclick="viewProduct(' . $row["product_id"] . ')">' . $row["product_name"] . '</h4>';
+                        echo '<div class="stars">';
+                        echo '<i class="bi bi-star-fill"></i>';
+                        echo '<i class="bi bi-star-fill"></i>';
+                        echo '<i class="bi bi-star-fill"></i>';
+                        echo '<i class="bi bi-star-fill"></i>';
+                        echo '<i class="bi bi-star-fill"></i>';
+                        echo '<aside>(24)</aside>';
+                        echo '</div>';
+                        echo '<div class="price">$' . $row["product_price"] . '</div>';
+                        echo '<div class="bag cen" onclick="addToCart(' . $row["product_id"] . ')">';
+                        echo '<div class="i cen" ><i class="bi bi-bag-plus"></i></div>';
+                        echo '<h6>Add to cart</h6>';
+                        echo '</div>';
+                        echo '</span>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "0 results";
+                }
 
-    // Close connection
-    $conn->close();
-    ?>
+                // Close connection
+                $conn->close();
+                ?>
 </div>
 
 
@@ -400,6 +414,74 @@
 
 
     </div>
+
+    <script>
+
+$(document).ready(function() {
+    // Function to fetch cart items from the server
+    function fetchCartItems() {
+        $.ajax({
+            url: 'backend/fetch_cart_items.php',
+            type: 'GET',
+            dataType: 'json', // Specify the expected data type
+            success: function(response) {
+                console.log(response); // Log the response in the console
+                displayCartItems(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching cart items:', error);
+            }
+        });
+    }
+
+    // Function to display cart items on the page
+    function displayCartItems(cartItems) {
+        var cartItemsContainer = $('#cartItemsContainer');
+        cartItemsContainer.empty(); // Clear previous items
+
+        if (Array.isArray(cartItems) && cartItems.length > 0) {
+    // Loop through each cart item and create HTML
+    cartItems.forEach(function(item) {
+        // Extract the image path
+        const imagePath = item.product_image ? item.product_image.split('/').slice(2).join('/') : '';
+        
+        var cartItemHtml = `
+                 <div class="cartitem">
+                    <div class="c_image cen">
+                        <img src="./${imagePath}" alt="">
+                    </div>
+                    <div class="desc">
+                        <h3>${item.product_name}</h3>
+                        <p>${item.product_description}</p>
+                    </div>
+                    <div class="price cen">
+                        <div class="qty cen">
+                            <aside class="b cen">-</aside>
+                            <aside class="cen">${item.quantity}</aside>
+                            <aside class="b cen">+</aside>
+                        </div>
+                        <div class="amt cen">
+                            <aside>Unit Price: <br> ${item.product_price}</aside>
+                            <aside>Sub Total: <br> ${item.sub_total}</aside>
+                        </div>
+                    </div>
+                </div>
+         `;
+        cartItemsContainer.append(cartItemHtml);
+    });
+} else {
+    cartItemsContainer.html('<p>No items in the cart</p>');
+}
+
+    }
+
+    // Fetch cart items when the page loads
+    fetchCartItems();
+});
+
+
+</script>
+
 
     <script>
         $(document).ready(function() {
