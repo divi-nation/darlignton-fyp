@@ -1,4 +1,11 @@
 
+
+function toggle_items(item_name){
+
+    element = document.querySelector(item_name);
+    element.classList.toggle("active");
+
+}
         function addToCart(productId) {
             // AJAX request to add product to cart
             $.ajax({

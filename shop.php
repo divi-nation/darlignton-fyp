@@ -18,6 +18,8 @@
 
 <div class="mycart">
     <h4>SHOPPING CART</h4>
+    <div class='cen update' onclick="location.reload();">Click To Update Cart</div>
+
     <div class="cont" >
         <div class="oy" id="cartItemsContainer">
                     <!-- Cart items will be dynamically inserted here -->
@@ -275,7 +277,8 @@
                 <div class="results" id="searchResults"></div>
             </div>
 
-            <div class="cart n cen">
+            <div class="cart n cen" onclick="toggle_items('.mycart'); updateOrderSummary();
+">
                 <div class="cir cen">
                     <i class="bi bi-cart4"></i>
 
@@ -415,72 +418,11 @@
 
     </div>
 
-    <script>
-
-$(document).ready(function() {
-    // Function to fetch cart items from the server
-    function fetchCartItems() {
-        $.ajax({
-            url: 'backend/fetch_cart_items.php',
-            type: 'GET',
-            dataType: 'json', // Specify the expected data type
-            success: function(response) {
-                console.log(response); // Log the response in the console
-                displayCartItems(response);
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching cart items:', error);
-            }
-        });
-    }
-
-    // Function to display cart items on the page
-    function displayCartItems(cartItems) {
-        var cartItemsContainer = $('#cartItemsContainer');
-        cartItemsContainer.empty(); // Clear previous items
-
-        if (Array.isArray(cartItems) && cartItems.length > 0) {
-    // Loop through each cart item and create HTML
-    cartItems.forEach(function(item) {
-        // Extract the image path
-        const imagePath = item.product_image ? item.product_image.split('/').slice(2).join('/') : '';
-        
-        var cartItemHtml = `
-                 <div class="cartitem">
-                    <div class="c_image cen">
-                        <img src="./${imagePath}" alt="">
-                    </div>
-                    <div class="desc">
-                        <h3>${item.product_name}</h3>
-                        <p>${item.product_description}</p>
-                    </div>
-                    <div class="price cen">
-                        <div class="qty cen">
-                            <aside class="b cen">-</aside>
-                            <aside class="cen">${item.quantity}</aside>
-                            <aside class="b cen">+</aside>
-                        </div>
-                        <div class="amt cen">
-                            <aside>Unit Price: <br> ${item.product_price}</aside>
-                            <aside>Sub Total: <br> ${item.sub_total}</aside>
-                        </div>
-                    </div>
-                </div>
-         `;
-        cartItemsContainer.append(cartItemHtml);
-    });
-} else {
-    cartItemsContainer.html('<p>No items in the cart</p>');
-}
-
-    }
-
-    // Fetch cart items when the page loads
-    fetchCartItems();
-});
+     
+    <script src="scripts/shop.js" ></script>
 
 
-</script>
+    <script src="scripts/clearCart.js" ></script>
 
 
     <script>

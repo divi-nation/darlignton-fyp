@@ -1,20 +1,37 @@
 
 
+
+
 .mycart{
-    width: 80%;
-    height: 80%;
+    
+    width: 0%;
+    height: 0%;
     position: fixed;
-    left: 10%;
+    right: 10%;
     top: 10%;
     background: rgba(255, 255, 255, 0.993);
     box-shadow: 0 0 25px 1px grey;
     border-radius: 2rem;
     z-index: 5;
-    padding: 5vw;
+    padding: 0;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+    opacity: 0;
+
+     
     
     
 }
+.mycart.active{
+    opacity: 1;
 
+    width: 80%;
+    height: 80%;
+    padding: 5vw;
+
+
+
+}
 .mycart h4{
     font-size: 2rem;
     font-weight: 400;
@@ -56,7 +73,8 @@
     margin-top: 1.5rem;
      max-height: 50%;
     overflow-y: auto;
-}
+    max-width: calc(60% + 1rem) !important;
+  }
 .cartitem .price{
      height: 5rem;
     width: 60%;
@@ -73,8 +91,7 @@
 }
 
 .b{
-    border: 1px solid;
-    padding: .5rem .8rem;
+     padding: .5rem .8rem;
     border-radius: .3rem;
 }
 
@@ -93,6 +110,10 @@
 .os{
     padding: 1rem;
     border: 1px solid grey;
+    position: absolute;
+    right: 5%;
+    width: 30%;
+    top: 10%;
 }
 .val{
     font-size: 26px;
@@ -114,3 +135,17 @@
     padding: 1rem;
 }
 
+
+.update{
+     
+    background: red;
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    padding: .5rem;
+    font-size: 13px;
+    color: #222;
+    background: white;
+    box-shadow:  0 0 7px 1px rgba(128, 128, 128, 0.135);
+    border-radius: .5rem;
+}
