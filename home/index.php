@@ -9,6 +9,7 @@
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/cart.css">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -17,6 +18,8 @@
 </head>
 <body>
     <div class="container">
+       <?php require_once "../components/cart.php"?>
+
         <!-- Include navigation component -->
         <?php require_once "../components/nav.php"?>
         
