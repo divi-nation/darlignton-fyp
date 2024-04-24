@@ -10,7 +10,7 @@
                 <span class="cen" onclick="location.href='../discover/'">Discover</span>
                 <span class="cen" onclick="location.href='../shop/'">Shop</span>
                 <span class="cen" onclick="location.href='../hotdeals/'">Hot Deals</span>
-                <span class="cen" onclick="location.href='../discover/'">Swift Pay</span>
+                <span class="cen" onclick="location.href='../scan/'">Swift Pay</span>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
                 <span class="cen" onclick="location.href='../discover/'">Discover</span>
                 <span class="cen" onclick="location.href='../shop/'">Shop</span>
                 <span class="cen" onclick="location.href='../hotdeals/'">Hot Deals</span>
-                <span class="cen" onclick="location.href='../discover/'">Swift Pay</span>
+                <span class="cen" onclick="location.href='../scan/'">Swift Pay</span>
             </div>
 
             <div class="cart n cen mc" onclick="toggle_items('.mycart'); updateOrderSummary();">

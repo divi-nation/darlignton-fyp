@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/signup.css">
 </head>
 <body>
 
-    <div class="container cen">
-        <form action="backend/vendorSignUp.php" method="POST">
+    <div class="container cen bg">
+        <form action="../backend/vendorSignUp.php" method="POST">
             <div class="form-group">
                 <label for="businessName">Business Name:</label>
                 <input type="text" id="businessName" name="businessName" placeholder="Enter your business name" required>
@@ -62,8 +62,15 @@
                 <label for="mobileMoney">Payout Mobile Money Number:</label>
                 <input type="text" id="mobileMoney" name="mobileMoney" placeholder="Enter your Mobile Money number" required>
             </div>
+
+            <div class="btn">
+                <button class="su" type="submit">Sign Up</button>
+                <button class="su bth" type="button" onclick="location.href='../home/'" >Back To Home</button>
+
+
+            </div>
         
-            <button class="su" type="submit">Sign Up</button>
+            
         </form>
         
         

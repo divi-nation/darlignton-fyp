@@ -32,6 +32,35 @@ function addToCart(productId) {
 }
 
 
+function showVendorAuthentication() {
+    // Display the SweetAlert modal
+    Swal.fire({
+        title: 'Vendor Authentication',
+        icon: 'info',
+        html:
+            '<p>Welcome! Please authenticate as a vendor.</p>',
+        showCancelButton: true,
+        confirmButtonText: 'Login',
+        cancelButtonText: 'Sign Up',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        reverseButtons: true,
+        focusConfirm: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false
+    }).then((result) => {
+        // Handle the button clicks
+        if (result.isConfirmed) {
+            // Redirect to login page
+            window.location.href = '../login/';
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            // Redirect to signup page
+            window.location.href = '../signup/';
+        }
+    });
+}
+
 // Function to animate the cart after adding a product
 function animateCart(productId){
     // Find the "Add to Cart" button corresponding to the productId

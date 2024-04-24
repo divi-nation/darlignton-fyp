@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/shop.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- External JavaScript Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -44,7 +46,7 @@
                     <div class="slant"></div>
                     <h3>Become A Vendor</h3>
                     <p>Discover the opportunities awaiting you as a vendor in our thriving marketplace. Sign up today and become part of our diverse community, which already boasts over 300 vendors. Showcase your products, connect with customers, and unlock new possibilities for your business. With our platform, you'll gain access to valuable resources, support, and promotional opportunities to help you succeed. </p>
-                    <button>Sign Up</button>
+                    <button onclick="showVendorAuthentication()" >Sign Up</button>
                 </span>
                 <span></span>
             </div>

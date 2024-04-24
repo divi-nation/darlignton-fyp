@@ -6,21 +6,21 @@
     <title>QR Code Scanner</title>
     <script src="https://cdn.jsdelivr.net/npm/jsQR@1.0.1/dist/jsQR.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/index.css">
 
-    <link rel="stylesheet" href="scan.css">
+    <link rel="stylesheet" href="../css/scan.css">
 </head>
 <body>
     <div class="container cen">
         <div class="contents cen">
             <div class="extras cen">
-                <i class="bi bi-arrow-left"></i>
+                <i class="bi bi-arrow-left" onclick="location.href='../home/'"></i>
                 <div class="icon cen"><i class="bi bi-arrow-clockwise"></i></div>
                 <div class="icon cen" onclick="toggleFlashlight()"><i class="bi bi-lightning-charge"></i></div>
                 <i class="bi bi-three-dots-vertical"></i>
             </div>
             <div class="preview cen" id="cameraPreview">
-                <img src="images/qr.gif" alt="" srcset="">
+                <img src="../images/qr.gif" alt="" srcset="">
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Redirect the user to shop.html
-                    window.location.href = 'shop.html';
+                    window.location.href = '../shop/';
                 }
             });
         }, 10000);
