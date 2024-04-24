@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="checkout.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="../css/cart.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -18,6 +18,7 @@
 <body>
     <div class="container">
 
+    <?php require_once "../components/cart.php"?>
     <?php require_once "../components/nav.php"?>
 
         <div class="info">

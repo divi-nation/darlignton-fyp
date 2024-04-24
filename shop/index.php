@@ -32,7 +32,7 @@
         <div class="hero">
             <span class="hs1">
                 <h3>Scan and Pay, Swiftly Pay All Mall Vendors With One Tap</h3>
-                <button>Pay Now</button>
+                <button onclick="location.href='../scan/'">Pay Now</button>
             </span>
             <span class="hs2 ">
                 <img src="../assets/pay.png" alt="">

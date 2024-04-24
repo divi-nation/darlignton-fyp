@@ -141,8 +141,8 @@ $(document).ready(function() {
                     <div class="val cen">
                         <h6>TOTAL</h6>
                         <h6 id="totalValue2"></h6> <!-- Placeholder for total value -->                    </div>
-                        <button onclick="location.href='checkout.php'">CHECKOUT</button>
-                        <button onclick="location.href='backend/clearCart.php'">CLEAR CART</button>
+                        <button onclick="location.href='../checkout/'">CHECKOUT</button>
+                        <button onclick="location.href='../backend/clearCart.php'">CLEAR CART</button>
                     </div>
 
 

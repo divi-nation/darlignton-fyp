@@ -164,3 +164,22 @@ form button{
 .detail p{
     margin-top: .5rem;
 }
+
+.card h6{
+    font-size: 15px;
+
+}
+
+.card{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5vw;
+ }
+
+.card p{
+    font-size: 7rem;
+}
+
+.delete{
+    color: red !important;
+}

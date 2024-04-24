@@ -15,9 +15,9 @@
 
         </nav>
         <div class="panel cen">
-            <span>Dashboard</span>
-            <span>Products</span>
-            <span>Orders</span>
+            <span onclick="location.href='vendor.php'" >Dashboard</span>
+            <span onclick="location.href='products.php'">Products</span>
+            <span onclick="location.href='orders.php'">Orders</span>
             <span>Settings</span>
          </div>
          <div class="content">
@@ -25,9 +25,18 @@
             <p>Lorem ipsum dolor sit.</p>
 
             <div class="stats cen">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <div class="card cen">
+                    <h6>Orders</h6>
+                    <p>42</p>
+                </div>
+                <div class="card cen">
+                <h6>Products</h6>
+                    <p>42</p>
+                </div>
+                <div class="card cen">
+                    <h6>Orders</h6>
+                    <p>42</p>
+                </div>
             </div>
 
             <div class="orders">

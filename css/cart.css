@@ -147,6 +147,7 @@
     background: white;
     box-shadow:  0 0 7px 1px rgba(128, 128, 128, 0.135);
     border-radius: .5rem;
+    z-index: 10;
 }
 
 @media (max-width: 850px){

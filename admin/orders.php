@@ -16,9 +16,9 @@
  
         </nav>
         <div class="panel cen">
-            <span>Dashboard</span>
-            <span>Products</span>
-            <span>Orders</span>
+            <span onclick="location.href='vendor.php'" >Dashboard</span>
+            <span onclick="location.href='products.php'">Products</span>
+            <span onclick="location.href='orders.php'">Orders</span>
             <span>Settings</span>
          </div>
          <div class="content">

@@ -21,7 +21,7 @@
             </div>
 
             <div class="btn">
-                <button class="su" type="submit">Sign Up</button>
+                <button class="su" type="submit">Login</button>
                 <button class="su bth" type="button" onclick="location.href='../home/'" >Back To Home</button>
 
 
