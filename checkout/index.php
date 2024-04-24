@@ -12,13 +12,15 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <!-- Include Paystack JavaScript library -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
     <div class="container">
 
-    <?php require_once "../components/cart.php"?>
     <?php require_once "../components/nav.php"?>
 
         <div class="info">
@@ -56,7 +58,7 @@
         </div>
     </div>
 
-    <script src="scripts/shop.js"></script>
+    <script src="../scripts/shop.js"></script>
     <script>
         $(document).ready(function () {
             $('#proceedToPay').click(function () {
@@ -92,5 +94,78 @@
             });
         });
     </script>
+
+
+<!-- JavaScript Files -->
+<script src="../scripts/shop.js"></script>
+<script src="../scripts/clearCart.js"></script>
+<script src="../scripts/searchLogic.js"></script>
+<script src="../scripts/script.js"></script>
+<script>
+    $(document).ready(function () {
+    $('#proceedToPay').click(function () {
+        // Get form data
+        var fullName = $('#fullName').val();
+        var phoneNumber = $('#phoneNumber').val();
+        var emailAddress = $('#emailAddress').val();
+        var address = $('#address').val();
+        
+        // Prepare form data
+        var formData = {
+            fullName: fullName,
+            phoneNumber: phoneNumber,
+            emailAddress: emailAddress,
+            address: address
+        };
+
+        // Send form data via AJAX
+        $.ajax({
+            url: '../backend/orders.php',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                // Handle success
+                console.log(response);
+                if (response === "Order placed successfully!") {
+                    // Trigger SweetAlert success popup
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Order placed successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Redirect to the homepage
+                            window.location.href = '../home/'; // Replace 'homepage.php' with the actual URL of your homepage
+                        }
+                    });
+
+                } else if (response === "NO_ITEMS") {
+                    // Trigger SweetAlert for no items in the cart
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'No items in the cart for the current buyer.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    // Handle other responses or errors
+                    // Display an alert or perform other actions as needed
+                    alert(response);
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error('Error:', error);
+                // Display an error message or handle it as appropriate
+            }
+        });
+    });
+});
+
+
+</script>
+
+
 </body>
 </html>

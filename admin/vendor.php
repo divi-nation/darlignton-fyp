@@ -21,8 +21,8 @@
             <span>Settings</span>
          </div>
          <div class="content">
-            <h4>Lorem ipsum, dolor sitr adipisicing.</h4>
-            <p>Lorem ipsum dolor sit.</p>
+            <h4>Welcome to Your Vendor Dashboard</h4>
+            <p>You can manage your orders and products on this page</p>
 
             <div class="stats cen">
                 <div class="card cen">
@@ -34,8 +34,8 @@
                     <p>42</p>
                 </div>
                 <div class="card cen">
-                    <h6>Orders</h6>
-                    <p>42</p>
+                    <h6>Financial</h6>
+                    <p>4234</p>
                 </div>
             </div>
 

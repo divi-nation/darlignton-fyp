@@ -151,12 +151,12 @@ $(document).ready(function() {
                 cartItemsContainer.append(cartItemHtml);
 
                 // Assuming you have calculated the total and stored it in the variable TOTAL
- 
-// Assuming you have calculated the total and stored it in the variable TOTAL
-var totalValueElement = document.getElementById('totalValue');
-totalValueElement.textContent = TOTAL.toFixed(2); // Assuming TOTAL is a number, and you want to display it with 2 decimal places
-var totalValueElement = document.getElementById('totalValue2');
-totalValueElement.textContent = TOTAL.toFixed(2); // Assuming TOTAL is a number, and you want to display it with 2 decimal places
+                
+                // Assuming you have calculated the total and stored it in the variable TOTAL
+                var totalValueElement = document.getElementById('totalValue');
+                totalValueElement.textContent = TOTAL.toFixed(2); // Assuming TOTAL is a number, and you want to display it with 2 decimal places
+                var totalValueElement = document.getElementById('totalValue2');
+                totalValueElement.textContent = TOTAL.toFixed(2); // Assuming TOTAL is a number, and you want to display it with 2 decimal places
 
                 // Attach event listeners to the plus and minus buttons
                 cartItemsContainer.find(`[data-productid="${item.product_id}"] .minus`).click(function() {

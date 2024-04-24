@@ -96,7 +96,7 @@
                 }
                 ?>
                 <div class="buttons cen">
-                    <button>Buy Now</button>
+                    <button onclick="location.href='../checkout/'">Buy Now</button>
                     <!-- Add onclick attribute to add product to cart -->
                     <?php echo '<button onclick="addToCart(' . $row["product_id"] . ')">Add To Cart</button>';?>
                 </div>

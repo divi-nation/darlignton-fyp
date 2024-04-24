@@ -36,5 +36,5 @@ if (isset($_SESSION['buyer_id'])) {
     echo json_encode(array("success" => false, "error" => "Buyer ID not found in session"));
 }
 
-header("Location: ../shop.php");
+header("Location: ../shop/");
 ?>

@@ -76,7 +76,9 @@
                         <span>$90.75</span>
                         <span><a href="#">View Details</a></span>
                     </div>
-                                    </div>
+                                
+                </div>
+                
             </div>
             
 

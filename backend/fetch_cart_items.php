@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
             // Check if product details are found
             if ($product_result->num_rows > 0) {
                 $product_info = $product_result->fetch_assoc();
-
+ 
                 // Add product details to the cart item array
                 $cart_items[] = array(
                     'product_id' => $product_id,

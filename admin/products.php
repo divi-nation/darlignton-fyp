@@ -28,7 +28,7 @@ session_start();
             <h4>All Products On Display</h4>
             <p>Hello, Here are all the products you have posted</p>
 
-            <div class="add">Add Product</div>
+            <div class="add" onclick='location.href="addProduct.php"'>Add Product</div>
 
             <div class="products orders">
                 <h4>Product Information</h4>
