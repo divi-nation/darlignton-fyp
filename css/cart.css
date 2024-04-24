@@ -149,3 +149,44 @@
     box-shadow:  0 0 7px 1px rgba(128, 128, 128, 0.135);
     border-radius: .5rem;
 }
+
+@media (max-width: 850px){
+    .mycart.active{
+        height: 100vh !important;
+        width: 100vw !important;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 6;
+     }
+
+     .os{
+        position: absolute;
+        height:30vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+     }
+     .oy{
+        width: 100vw;
+        border: 1px solid red;
+        height: calc(70vh);
+        margin-top: 25vh !important;
+        margin-left: -5%;
+     }
+
+     .val{
+        font-size: 14px;
+        margin-top: .5rem;
+     }
+
+     .os button{
+        margin-top: .5rem;
+     }
+
+     .cartitem{
+        width: 35rem!important;
+     }
+
+}

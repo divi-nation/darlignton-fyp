@@ -17,6 +17,9 @@
 </head>
 <body>
     <div class="container">
+
+    <?php require_once "../components/nav.php"?>
+
         <div class="info">
             <h4>Contact Information</h4>
             <form id="checkoutForm">

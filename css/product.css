@@ -1,6 +1,5 @@
 .product{
-    border: 1px solid;
-    width: 100%;
+     width: 100%;
     height: calc(100vh - 10rem);
     margin-top: 9rem;
     display: grid;
@@ -8,8 +7,7 @@
 }
 
 .product aside{
-    border: 1px solid;
-    position: relative;
+     position: relative;
 }
 
 .main_image{
@@ -17,6 +15,7 @@
     width: 90%;
     border-radius: 1rem;
     box-shadow:  0 0 10px 1px rgba(128, 128, 128, 0.151);
+    overflow: hidden;
 
  
 }
@@ -31,6 +30,7 @@
     height: 5rem;
      display: flex;
     justify-content: space-around;
+    z-index: 3;
 
 }
 

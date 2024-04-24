@@ -1,4 +1,4 @@
-<?php require_once "conn.php"?>
+<?php require_once "../connection/conn.php"?>
 
 
 <!DOCTYPE html>
@@ -7,38 +7,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- jQuery Library -->
+
+         <!-- Sweetalert cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
     <div class="container">
-        <nav class="">
-            <div class="logo n cen">
-                <img src="logo.png" alt="">
-            </div>
 
-            <div class="nav_content n cen">
-                <div class="tabs cen">
-                    <span class="cen">Categories</span>
-                    <span class="cen">Discover</span>
-                    <span class="cen">Shop</span>
-                    <span class="cen">Hot Deals</span>
-                    <span class="cen">Swift Pay</span>
-                </div>
-            </div>
+    <?php require_once "../components/nav.php"?>
 
-            <div class="search n cen">
-                <input type="text" placeholder="Search for products or vendors">
-                <i class="bi bi-search"></i>
-            </div>
-
-            <div class="cart n cen">
-                <div class="cir cen">
-                    <i class="bi bi-cart4"></i>
-                </div>
-            </div>
-        </nav>
+ 
 
         <div class="product">
             <aside class="cen">
@@ -57,7 +41,7 @@
                         if ($result->num_rows > 0) {
                             // Output data of the product
                             $row = $result->fetch_assoc();
-                            echo '<img src="./products' . $row["image1"] . '" alt="' . $row["product_name"] . '">';
+                            echo '<img src="../products' . $row["image1"] . '" alt="' . $row["product_name"] . '">';
                         } else {
                             echo 'Product not found';
                         }
@@ -70,13 +54,13 @@
                 <div class="subs">
                     <!-- Additional images if needed -->
                     <div class="sub_image cen">
-                        <?php echo '<img src="./products' . $row["image2"] . '" alt="' . $row[""] . '">';?>
+                        <?php echo '<img src="../products' . $row["image2"] . '" alt="' . $row[""] . '">';?>
                     </div>
                     <div class="sub_image cen">
-                        <?php echo '<img src="./products' . $row["image3"] . '" alt="' . $row[""] . '">';?>
+                        <?php echo '<img src="../products' . $row["image3"] . '" alt="' . $row[""] . '">';?>
                     </div>
                     <div class="sub_image cen">
-                        <?php echo '<img src="./products' . $row["image4"] . '" alt="' . $row[""] . '">';?>
+                        <?php echo '<img src="../products' . $row["image4"] . '" alt="' . $row[""] . '">';?>
                     </div>
             
                 </div>
@@ -111,10 +95,28 @@
                 ?>
                 <div class="buttons cen">
                     <button>Buy Now</button>
-                    <button>Add To Cart</button>
+                    <!-- Add onclick attribute to add product to cart -->
+                    <?php echo '<button onclick="addToCart(' . $row["product_id"] . ')">Add To Cart</button>';?>
                 </div>
             </aside>
         </div>
     </div>
+
+
+    <script>
+        function toggle_items(item_name){
+    // Select the element with the specified name
+            element = document.querySelector(item_name);
+            // Toggle the "active" class to show/hide the element
+            element.classList.toggle("active");
+}
+    </script>
+
+    <!-- External JavaScript Files -->
+    <script src="../scripts/shop.js"></script>
+    <script src="../scripts/clearCart.js"></script>
+    <script src="../scripts/searchLogic.js"></script>
+    <script src="../scripts/script.js"></script>
+
 </body>
 </html>

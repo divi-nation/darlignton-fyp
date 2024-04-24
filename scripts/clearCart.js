@@ -9,7 +9,7 @@ function clearCart() {
 
             // Send an AJAX request to clear the cart for the buyer ID
             $.ajax({
-                url: 'backend/clearCart.php',
+                url: '../backend/clearCart.php',
                 type: 'POST',
                 data: { buyerId: buyerId }, // Send the buyer ID to the backend
                 success: function(response) {

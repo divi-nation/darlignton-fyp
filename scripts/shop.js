@@ -54,7 +54,7 @@ $(document).ready(function() {
     // Function to fetch cart items from the server
     function fetchCartItems() {
         $.ajax({
-            url: 'backend/fetch_cart_items.php',
+            url: '../backend/fetch_cart_items.php',
             type: 'GET',
             dataType: 'json', // Specify the expected data type
             success: function(response) {
@@ -108,7 +108,7 @@ $(document).ready(function() {
                 var cartItemHtml = `
                     <div class="cartitem" data-productid="${item.product_id}">
                         <div class="c_image cen">
-                            <img src="./${imagePath}" alt="">
+                            <img src="../${imagePath}" alt="">
                         </div>
                         <div class="desc">
                             <h3>${item.product_name}</h3>

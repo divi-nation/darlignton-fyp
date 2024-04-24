@@ -10,7 +10,7 @@ if (isset($_SESSION['buyer_id'])) {
     $buyerId = $_SESSION['buyer_id'];
 
 
-    require_once "conn.php";
+    require_once "../connection/conn.php";
 
 
 

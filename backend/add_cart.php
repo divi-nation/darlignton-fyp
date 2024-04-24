@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "../conn.php";
+require_once "../connection/conn.php";
 
 if(isset($_POST['productId'])) {
     $product_id = $_POST['productId'];
